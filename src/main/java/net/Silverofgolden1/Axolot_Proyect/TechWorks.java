@@ -1,6 +1,7 @@
 package net.Silverofgolden1.Axolot_Proyect;
 
 import com.mojang.logging.LogUtils;
+import net.Silverofgolden1.Axolot_Proyect.item.ModItem;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -28,7 +29,7 @@ public final class TechWorks {
         // Register the commonSetup method for modloading
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
-
+        ModItem.ITEMS.register(modBusGroup);
 
         // Register the item to a creative tab
         BuildCreativeModeTabContentsEvent.getBus(modBusGroup).addListener(TechWorks::addCreative);
